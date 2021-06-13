@@ -461,10 +461,10 @@ tweet_words &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span>
 <h3><span class="header-section-number">2.3.1</span> Time line of retweetCount and FavoriteCount from Feb to May</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> df) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_col</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> created, <span class="dt">y =</span> retweetCount, <span class="dt">color =</span> source, <span class="dt">fill =</span> source))</code></pre></div>
-<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> df) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_col</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> created, <span class="dt">y =</span> favoriteCount, <span class="dt">color =</span> source, <span class="dt">fill =</span> source))</code></pre></div>
-<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-4-2.png" width="672" /></p>
+<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-3-2.png" width="672" /></p>
 </div>
 <div id="tweeting-in-hour-of-a-day" class="section level3">
 <h3><span class="header-section-number">2.3.2</span> Tweeting in Hour of a Day</h3>
@@ -500,12 +500,12 @@ p3 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(tweeting_hour) <
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Hour of a day&quot;</span>)
 
 p4 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(tweeting_hour_<span class="dv">20</span>) <span class="op">+</span>
-<span class="st">    </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> word, <span class="dt">y =</span> hour)) <span class="op">+</span>
-<span class="st">    </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Hour of a day&quot;</span>) <span class="op">+</span><span class="st"> </span>
-<span class="st">    </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>))
+<span class="st">    </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> hour, <span class="dt">y =</span> sentiment)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Hour of a day&quot;</span>)
+    
 
 <span class="kw">plot_grid</span>(p1, p2, p3, p4, <span class="dt">ncol =</span> <span class="dv">2</span>)</code></pre></div>
-<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 </div>
 <div id="picturelink-from-each-source" class="section level2">
@@ -533,7 +533,7 @@ picture</code></pre></div>
 <span class="st">    </span><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(picture, n), <span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="dt">width =</span> <span class="fl">0.5</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;count&quot;</span>)</code></pre></div>
-<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 </div>
 </div>
 <div id="comparison-of-words" class="section level1">
@@ -548,7 +548,7 @@ picture</code></pre></div>
 <span class="st">    </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">x =</span> word, <span class="dt">y =</span> n), <span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">ylab</span>(<span class="st">&quot;frequency of occurrence&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">coord_flip</span>()</code></pre></div>
-<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 <div id="word-weighting-of-different-sources-video-streaming-app-and-the-white-house" class="section level2">
 <h2><span class="header-section-number">3.2</span> Word Weighting of different sources (Video Streaming App and The White House)</h2>
@@ -564,7 +564,7 @@ WhiteHouse_periscope_ratios &lt;-<span class="st"> </span>tweet_words <span clas
 
 WhiteHouse_periscope_ratios <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">group_by</span>(logratio <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">top_n</span>(<span class="dv">8</span>, <span class="kw">abs</span>(logratio)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">top_n</span>(<span class="dv">5</span>, <span class="kw">abs</span>(logratio)) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">reorder</span>(word, logratio)) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, logratio, <span class="dt">fill =</span> logratio <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>)) <span class="op">+</span>
@@ -574,7 +574,7 @@ WhiteHouse_periscope_ratios <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;The White House / Periscope log ratio&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">name =</span> <span class="st">&quot;&quot;</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;The White House&quot;</span>, <span class="st">&quot;Periscope&quot;</span>),
                     <span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;lightblue&quot;</span>))</code></pre></div>
-<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 </div>
 </div>
 <div id="sentiment-analysis" class="section level1">
@@ -604,7 +604,7 @@ sentiment_overview</code></pre></div>
 <span class="st">  </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">reorder</span>(sentiment, n), <span class="dt">y =</span> n), <span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;sentiment&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;count&quot;</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">coord_flip</span>()</code></pre></div>
-<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
 <div id="tweets-sentiment-by-source" class="section level2">
 <h2><span class="header-section-number">4.2</span> Tweets Sentiment by Source</h2>
@@ -676,7 +676,7 @@ nrc_word_counts</code></pre></div>
 <span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>sentiment, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.y =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="kw">rel</span>(<span class="fl">0.75</span>))) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Word&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Frequency of Occurrence by Sentiment&quot;</span>)</code></pre></div>
-<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 </div>
 <div id="usage-of-common-sentimental-words-with-top-fifty-favoritecount" class="section level2">
 <h2><span class="header-section-number">4.4</span> Usage of Common Sentimental Words with Top Fifty FavoriteCount</h2>
@@ -720,7 +720,7 @@ sentiment_overview_<span class="dv">50</span></code></pre></div>
 <span class="st">  </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">reorder</span>(sentiment, n), <span class="dt">y =</span> n), <span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;sentiment&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;count&quot;</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">coord_flip</span>()</code></pre></div>
-<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">nrc_word_counts &lt;-<span class="st"> </span>favorite_words <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">inner_join</span>(<span class="kw">get_sentiments</span>(<span class="st">&quot;nrc&quot;</span>)) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">count</span>(word, sentiment, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
@@ -752,7 +752,7 @@ nrc_word_counts</code></pre></div>
 <span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(sentiment), <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.y =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="kw">rel</span>(<span class="fl">0.75</span>))) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Word&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Words with Top Fifty FavoriteCount by Sentiment&quot;</span>)</code></pre></div>
-<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 </div>
 <div id="compared-with-joebiden" class="section level2">
 <h2><span class="header-section-number">4.5</span> Compared with <span class="citation">@JoeBiden</span></h2>
@@ -782,7 +782,7 @@ sentiment_df <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">x =</span> n, <span class="dt">y =</span> <span class="kw">reorder</span>(sentiment, n)), <span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;count&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;sentiment&quot;</span>)</code></pre></div>
-<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sentiment_counts<span class="op">$</span>sentiment =<span class="st"> </span>
 <span class="st">  </span><span class="kw">factor</span>(sentiment_counts<span class="op">$</span>sentiment, <span class="dt">levels =</span> sentiment_df<span class="op">$</span>sentiment)
 
@@ -797,7 +797,7 @@ sentiment_counts <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(sentiment), <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.y =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="kw">rel</span>(<span class="fl">0.75</span>))) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Word&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Frequency of Occurrence by Sentiment&quot;</span>)</code></pre></div>
-<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-15-2.png" width="672" /></p>
+<p><img src="Biden-POTUS-Final-Project_files/figure-html/unnamed-chunk-14-2.png" width="672" /></p>
 </div>
 </div>
 
